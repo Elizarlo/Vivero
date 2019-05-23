@@ -1,8 +1,8 @@
 <?php
  // Credenciales
  $dbhost = "localhost";
- $dbuser = "root";
- $dbpass = "";
+ $dbuser = "Karen";
+ $dbpass = "password";
  $dbname = "datos";
  //Conexion con la base de datos
  $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
