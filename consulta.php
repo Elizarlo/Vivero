@@ -1,8 +1,8 @@
 <?php
  // Credenciales
  $dbhost = "localhost";
- $dbuser = "Karen";
- $dbpass = "password";
+ $dbuser = "root";
+ $dbpass = "";
  $dbname = "datos";
  //Conexion con la base de datos
  $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -20,18 +20,19 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
 	 //echo "Tiempo = " .$row['tiempo'] ."<br />";
 	 //echo "Temperatura = " .$row['temperatura'] ."<br />";
-	 //echo "Humedad = " .$row['humedad'] ."<br />";
-   echo "
-   <script type=\"text/javascript\">
-     var objetos = {\"datos\":[
-  	            {\"tiempo\":$row['tiempo'],
-                  \"temperatura\": $row['temperatura'],
-                  \"humedad\": $row['humedad']
-                }
-  	        ]};
-      document.write(objetos);
-    <script type=\"text/javascript\">
-  }";
+	//	 echo "Humedad = " .$row['humedad'] ."<br />";
+	$respuesta=array();
+    $respuesta[]=array(
+	'Datos' =>
+	$datos=array(
+        'Tiempo'=>$row['tiempo'],
+        'Temperatura'=> $row['temperatura'] ,
+        'Humedad'=> $row['humedad']
+	)
+    );
+header('Content-Type: application/json');
+	    echo json_encode($respuesta);
+	}
 } else {
     echo "0 results";
 }
