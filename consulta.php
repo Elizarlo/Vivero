@@ -21,17 +21,13 @@ if (mysqli_num_rows($result) > 0) {
 	 //echo "Tiempo = " .$row['tiempo'] ."<br />";
 	 //echo "Temperatura = " .$row['temperatura'] ."<br />";
 	 //echo "Humedad = " .$row['humedad'] ."<br />";
-
-  echo "
-  {
-    \"datos\":[{
-            \"tiempo\":.$row['tiempo'] .\"\",
-            \"temperatura\":\".$row['temperatura'] .\",
-            \"humedad\":\".$row['humedad'] .\"
-        }
-    ]
-}";
-
+     var objetos = {"datos":[
+  	            {"tiempo":$row['tiempo'],
+                  "temperatura": $row['temperatura'],
+                  "humedad": $row['humedad']
+                }
+  	        ]};
+      echo objetos;
     }
 } else {
     echo "0 results";
