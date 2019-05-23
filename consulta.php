@@ -21,8 +21,7 @@ if (mysqli_num_rows($result) > 0) {
 	 //echo "Tiempo = " .$row['tiempo'] ."<br />";
 	 //echo "Temperatura = " .$row['temperatura'] ."<br />";
 	//	 echo "Humedad = " .$row['humedad'] ."<br />";
-	$respuesta=array();
-    $respuesta[]=array(
+	$respuesta=array(
 	'Datos' =>
 	$datos=array(
         'Tiempo'=>$row['tiempo'],
