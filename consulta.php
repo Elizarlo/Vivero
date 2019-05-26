@@ -1,7 +1,7 @@
 <?php
  // Credenciales
  $dbhost = "localhost";
- $dbuser = "Eluis";
+ $dbuser = "Karen";
  $dbpass = "password";
  $dbname = "datos";
  //Conexion con la base de datos
