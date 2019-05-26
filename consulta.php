@@ -1,7 +1,7 @@
 <?php
  // Credenciales
  $dbhost = "localhost";
- $dbuser = "Karen";
+ $dbuser = "Eluis";
  $dbpass = "password";
  $dbname = "datos";
  //Conexion con la base de datos
@@ -22,12 +22,11 @@ if (mysqli_num_rows($result) > 0) {
 	 //echo "Temperatura = " .$row['temperatura'] ."<br />";
 	//	 echo "Humedad = " .$row['humedad'] ."<br />";
 	$respuesta=array(
-	'Datos' =>
-	$datos=array(
+
         'Tiempo'=>$row['tiempo'],
         'Temperatura'=> $row['temperatura'] ,
         'Humedad'=> $row['humedad']
-	)
+	
     );
 header('Content-Type: application/json');
 	    echo json_encode($respuesta);
