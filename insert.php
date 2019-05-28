@@ -1,7 +1,7 @@
 <?php
  // Credenciales
  $dbhost = "localhost";
- $dbuser = "Eluis";
+ $dbuser = "Karen";
  $dbpass = "password";
  $dbname = "datos";
  //Conexion con la base de datos
@@ -14,7 +14,8 @@
 $dia = 1;
 $min = 0;
 $hora = 0;
-for ($i = 0; $i < 20000; $i++){
+
+for ($i = 0; $i < 0; $i++){
 	$randomFloat = rand(0, 10) / 10;
 	$temperatura =  rand(25, 30) + $randomFloat;
 	$randomFloat = rand(0, 10) / 10;
@@ -31,7 +32,7 @@ for ($i = 0; $i < 20000; $i++){
 	}
 	$query = "INSERT INTO Valores VALUES (0,'$timestamp','$temperatura','$humedad')";
 	 mysqli_query($con, $query);
-//	echo "$query <br>";
+
 }
 
 
