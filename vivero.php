@@ -15,7 +15,8 @@
  $Temperatura = mysqli_real_escape_string($con, $_GET['Temperatura']);
  $Humedad = mysqli_real_escape_string($con, $_GET['Humedad']);
  // EInsertamos los valores en la tabla
- $query = "INSERT INTO Valores(temperatura, humedad) VALUES('$Temperatura','$Humedad')";
+ $timestamp = date('Y-m-d G:i:s');
+ $query = "INSERT INTO Valores VALUES(0,'$timestamp','$Temperatura','$Humedad')";
  // Ejecutamos la instruccion
  mysqli_query($con, $query);
  mysqli_close($con);
